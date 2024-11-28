@@ -1,0 +1,5 @@
+ENV DB_HOST=db
+ENV DB_PORT=3306
+ENV DB_USER=postgres
+ENV DB_PASS="123"
+ENV DB_NAME="BalleCofe"
