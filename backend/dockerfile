@@ -1,5 +1,18 @@
-ENV DB_HOST=db
-ENV DB_PORT=3306
-ENV DB_USER=postgres
-ENV DB_PASS="123"
-ENV DB_NAME="BalleCofe"
+# Usar imagem base do Node.js
+FROM node:20.16.0
+
+# Definir o diretório de trabalho no container
+WORKDIR /app
+
+# Copiar o package.json e instalar dependências
+COPY package*.json ./
+RUN npm install
+
+# Copiar o código fonte
+COPY . .
+
+# Expor a porta do backend
+EXPOSE 3000
+
+# Comando para rodar a aplicação
+CMD ["node", "./server.js"]
